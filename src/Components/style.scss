@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+#root{
+    overflow-x: hidden;
+}
+.dashboard-container{
+    display: flex;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px;
+    // .logo-container{
+    //     @media (max-width:1024px){
+    //         position: absolute;
+    //         top: 2rem;
+    //         left:5rem;
+    //     }
+    // }
+    @media (max-width:1024px){
+        align-items: normal;
+    }
+    .menu-bar-container{
+        display: none;
+       
+        @media (max-width:1024px){
+            display: block;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            z-index: 9999;
+            button{
+                aspect-ratio: 1;
+                width: 2rem;
+                background: none;
+                border: none;
+            }
+        }
+    }
+    .menu-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15em;
+        @media (min-width:1025px) and (max-width:1189px){
+            gap:8em;
+        }
+
+        @media (max-width:1300px) and (min-width:1200px){
+            gap:12em;
+        }
+        @media (max-width:1024px){
+            flex-direction: column-reverse;
+            gap:2em;
+            padding:6em 2em;
+            z-index: 1000;
+            transform: translateX(150%);
+            transition: transform 350ms ease-out;
+            &.slide{
+                transform: translateX(0%);
+            }
+        }
+        .menu-list-container{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            @media (max-width:1024px){
+                flex-direction: column;
+            }
+            li{
+                list-style: none;
+                font-size: 16px;
+            }
+        }
+        .btn-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: right;
+            gap: 40px;
+    
+            @media (max-width:1024px){
+                flex-direction: column;
+                z-index: 1000;
+            }
+            .customer-login-btn{
+                background: none;
+                border: none;
+                font-size: 16px;
+            }
+            .signup-btn{
+                background-color: black;
+                color: white;
+                height: 45px;
+                width: 115px;
+                border: none;  
+                font-size: 16px;
+                border-radius: 10px;
+            }
+        }
+    }
+    
+}
